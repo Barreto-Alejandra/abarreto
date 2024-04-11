@@ -1,0 +1,18 @@
+.footer {
+    background: linear-gradient(to bottom, #2211EE 0%, #FF48C4 100%);
+    border-top: 1px solid white;
+    padding: 50px 0px;
+    .text {
+        font-family: "Press Start 2P", system-ui;
+        color: white;
+        text-align: center;
+        line-height: 2;
+        letter-spacing: 0.5px;
+    }
+    .text:last-of-type {
+        margin-bottom: 0px;
+    }
+    @include breakpoint(lg) {
+        padding-top: 80px;
+    }
+}

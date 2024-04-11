@@ -1,0 +1,82 @@
+@keyframes hue-rotate {
+    from {
+      filter: hue-rotate(0);
+    }
+    to {
+      filter: hue-rotate(360deg);
+    }
+}
+
+.projects{
+    padding: 60px 0px;
+    text-align: center;
+    &__grid {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 30px;
+        row-gap: 50px;
+        &--item {
+            text-align: left;
+            border: 1px solid white;
+            padding: 20px;
+            transform: scale(1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            &:hover,
+            &:focus {
+                transform: scale(1.05);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+                background: linear-gradient(233deg, #FF48C4, #2211EE, #33FF00, #B620E0, #FFE400);
+                
+                background-size: cover;
+                background-blend-mode: hard-light;
+                animation: hue-rotate 3s linear infinite
+            }
+            a {
+                text-decoration: none;
+            }
+            img {
+                display: block;
+            }
+            h3 {
+                letter-spacing: 1.3px;
+                font-size: clamp(18px, 1.5vw, 22px);
+                margin: 15px 0px;
+            }
+            .text {
+                line-height: 1.3;
+                font-family: $font-secondary;
+            }
+            ul {
+                padding: 0px;
+                margin: 20px 0px 0px;
+                list-style: none;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                li {
+                    letter-spacing: 1px;
+                }
+            }
+        }
+    }
+    @include breakpoint(lg) {
+        &__grid {
+            margin-top: 60px;
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+
+.projects__grid--item {
+    opacity: 0;
+    transform: scale(0.95);
+    /* Ajusta la duración a 0.5s y añade un delay que será controlado por JS */
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+  
+.projects__grid--item.visible {
+    opacity: 1;
+    transform: scale(1);
+}

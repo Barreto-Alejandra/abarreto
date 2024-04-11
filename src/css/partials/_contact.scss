@@ -1,0 +1,18 @@
+.contact  {
+    padding: 60px 0px;
+    text-align: center;
+    h2 {
+        margin-bottom: 30px;
+    }
+    a {
+        font-family: $font-tertiary;
+        font-size: clamp(12px, 1.5vw, 14px);
+        letter-spacing: 0.5px;
+    }
+    @include breakpoint(lg){
+        padding: 100px 0px;
+    }
+    @include breakpoint(xl){
+        padding: 120px 0px;
+    }
+}

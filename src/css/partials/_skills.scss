@@ -1,0 +1,18 @@
+.skills {
+    padding: 60px 0px;
+    text-align: center;
+    h2 {
+        margin-bottom: 40px;
+    }
+    @include breakpoint(lg) {
+        padding: 100px 0px;
+        .text {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+    @include breakpoint(xl) {
+        padding: 120px 0px;
+
+    }
+}

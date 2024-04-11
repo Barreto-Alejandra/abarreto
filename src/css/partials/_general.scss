@@ -1,0 +1,48 @@
+
+main {
+    background: linear-gradient(to bottom, #333333 0%, #2211EE 100%);
+    color: white;
+    a {
+        color: white;  
+    }
+    a.hover-anim {
+        transition: text-shadow 0.3s ease-in-out;
+        text-shadow: 0 0 5px transparent;
+        &:hover,
+        &:focus {
+            text-shadow: 0 0 8px $lime-green;
+            text-decoration-color: $lime-green;
+        }
+    }
+}
+
+html.lenis, html.lenis body {
+    height: auto;
+}
+  
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+/* Establece la opacidad inicial a 0 para que los elementos estén ocultos inicialmente */
+.fadeIn {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+  
+  /* Clase para cuando los elementos están en el viewport y deben volverse visibles */
+.fadeInVisible {
+    opacity: 1 !important;
+}
