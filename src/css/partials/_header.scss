@@ -1,17 +1,15 @@
 .header {
-  background:rgba(68, 67, 73, 0.3);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 99;
   padding: 2rem;
-
+  background-color: $black-dark;
  
   @include breakpoint(lg) {
-    background: linear-gradient(to bottom, #2211EE 0%, #333333 100%);
     width: -webkit-fill-available;
-    padding: 1.5rem 2rem;
+    padding: 1.8rem 2rem;
   }
 }
 
@@ -87,7 +85,6 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(to bottom, #333333 0%, #2211EE 100%);
     flex-direction: column;
     justify-content: center;
     align-items: center;

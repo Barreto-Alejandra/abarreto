@@ -11,6 +11,9 @@ import '../css/style.sass';
 //////////////////////////
 // IMPORT LIBRARIES JS
 //////////////////////////
+import { gsap } from "gsap";
+
+
 import Lenis from '@studio-freight/lenis'
 
 class Navigation {
@@ -91,6 +94,7 @@ class FadeInOnScroll {
   }
 }
 
+
 class GridAnimation {
   constructor(gridSelector, options) {
     this.gridItems = document.querySelectorAll(gridSelector);
@@ -125,6 +129,8 @@ class GridAnimation {
     });
   }
 }
+
+
 
 ////////////////////
 // Run apps

@@ -5,14 +5,16 @@
         margin-bottom: 40px;
     }
     @include breakpoint(lg) {
-        padding: 100px 0px;
+        padding: 100px 0px 150px;
         .text {
             width: 80%;
             margin: 0 auto;
         }
     }
     @include breakpoint(xl) {
-        padding: 120px 0px;
+        padding: 120px 0px 150px;
 
     }
 }
+
+
