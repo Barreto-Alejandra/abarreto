@@ -1,8 +1,13 @@
 .skills {
     padding: 60px 0px;
     text-align: center;
+    background-color: $tertiary-color;
+    color: black;
     h2 {
         margin-bottom: 40px;
+    }
+    .text {
+        color: black;
     }
     @include breakpoint(lg) {
         padding: 100px 0px 150px;

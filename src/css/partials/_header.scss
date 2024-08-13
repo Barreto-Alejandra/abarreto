@@ -5,7 +5,7 @@
   width: 100%;
   z-index: 99;
   padding: 2rem;
-  background-color: $black-dark;
+  background-color: $secondary-color;
  
   @include breakpoint(lg) {
     width: -webkit-fill-available;
@@ -23,7 +23,7 @@
   &__toggle {
     background: none;
     border: none;
-    color: white;
+    color: black;
     font-size: 2rem;
     cursor: pointer;
     outline: none;
@@ -42,14 +42,14 @@
       display: block;
       height: 2px;
       width: 1.5rem;
-      background: white;
+      background: black;
       position: relative;
       transition: all 0.3s ease-in-out;
 
       &::before,
       &::after {
         content: '';
-        background: white;
+        background: black;
         height: 2px;
         width: 1.5rem;
         position: absolute;
@@ -76,6 +76,7 @@
   }
 
   &__list {
+    background-color: $primary-color;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -115,7 +116,7 @@
       }
 
       .nav__link {
-        color: white;
+        color: black;
         font-size: clamp(18px, 1.5vw, 22px);
         letter-spacing: 1.5px;
         text-decoration: none;
@@ -124,8 +125,7 @@
         text-shadow: 0 0 5px transparent;
         &:hover,
         &:focus {
-          text-shadow: 0 0 8px $lime-green;
-          text-decoration-color: $lime-green;
+          
         }
       }
     }

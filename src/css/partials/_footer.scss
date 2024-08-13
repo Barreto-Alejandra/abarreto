@@ -1,15 +1,18 @@
 .footer {
-    border-top: 1px solid white;
+    border-top: 1px solid black;
     padding: 50px 0px;
+    background-color: $secondary-color;
     .text {
         font-family: "Press Start 2P", system-ui;
-        color: white;
+        color: black;
         text-align: center;
-        line-height: 2;
-        letter-spacing: 0.5px;
     }
     .text:last-of-type {
         margin-bottom: 0px;
+    }
+    .text.xs {
+        font-family: $font-secondary;
+        letter-spacing: 1.5px;
     }
     @include breakpoint(lg) {
         padding-top: 80px;
