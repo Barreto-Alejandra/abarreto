@@ -45,23 +45,33 @@ class Navigation {
 }
 
 class HeroAnimation {
-  constructor(sectionSelector) {
-    this.section = document.querySelector(sectionSelector);
-    this.initObserver();
+  constructor(heroSelector) {
+    this.heroSection = document.querySelector(heroSelector);
+    this.img = this.heroSection.querySelector('.hero__img');
+    this.heading = this.heroSection.querySelector('h1');
+    this.text = this.heroSection.querySelector('.text');
+    
+    this.animateHero(); // Llama directamente a la animación en el constructor
   }
 
-  initObserver() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.5 });
+  animateHero() {
+    // Añade la clase 'visible' para activar la animación del background y la opacidad general
+    this.heroSection.classList.add('visible');
 
-    observer.observe(this.section);
+    // Usa setTimeout para retrasar la animación de la imagen, el título y el texto
+    setTimeout(() => {
+      this.img.style.opacity = 1;
+      this.img.style.transform = 'translateY(0)';
+
+      this.heading.style.opacity = 1;
+      this.heading.style.transform = 'translateY(0)';
+
+      this.text.style.opacity = 1;
+      this.text.style.transform = 'translateY(0)';
+    }, 500); // Ajusta el tiempo según prefieras
   }
 }
+
 
 class FadeInOnScroll {
   constructor(elementsSelector, threshold = 0.8) {
@@ -165,7 +175,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   new Navigation();
-  const heroAnimation = new HeroAnimation('.hero');
+  new HeroAnimation('.hero');
+  
   const fadeInElements = new FadeInOnScroll('.fadeIn');
   const gridAnimation = new GridAnimation('.projects__grid--item', { threshold: 0.4 });
   const sliderItems = document.querySelector('.skill__slider--items');
