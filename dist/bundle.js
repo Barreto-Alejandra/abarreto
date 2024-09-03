@@ -288,61 +288,10 @@ document.addEventListener('DOMContentLoaded', function () {
   var gridAnimation = new GridAnimation('.projects__grid--item', {
     threshold: 0.4
   });
+  var sliderItems = document.querySelector('.skill__slider--items');
+  var clone = sliderItems.cloneNode(true);
+  document.querySelector('.skill__slider').appendChild(clone);
 });
-
-////////////////////
-// Copyright
-////////////////////
-window.SayMyName = function () {
-  console.log("%c\n                                                        \n                MADE WITH TOO MUCH SKILLS:              \n                                                        \n                                                        \n       333333    666    00000  PPPPPP  MM    MM IIIII   \n          3333  66     00   00 PP   PP MMM  MMM  III    \n         3333  666666  00   00 PPPPPP  MM MM MM  III    \n           333 66   66 00   00 PP      MM    MM  III    \n       333333   66666   00000  PP      MM    MM IIIII   \n                                                        \n                                                        \n                    https://360pmi.com/                 \n", 'background: #e8404b; color: white');
-};
-
-////////////////////
-// IE Detecter
-////////////////////
-
-/* Sample function that returns boolean in case the browser is Internet Explorer*/
-
-var isIE = function isIE() {
-  var ua = navigator.userAgent;
-  /* MSIE used to detect old browsers and Trident used to newer ones*/
-  var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
-  return is_ie;
-};
-var checkIeCookie = function checkIeCookie(name) {
-  var dc = document.cookie;
-  var prefix = name + "=";
-  var begin = dc.indexOf("; " + prefix);
-  if (begin == -1) {
-    begin = dc.indexOf(prefix);
-    if (begin != 0) return null;
-  } else {
-    begin += 2;
-    var end = document.cookie.indexOf(";", begin);
-    if (end == -1) {
-      end = dc.length;
-    }
-  }
-  // because unescape has been deprecated, replaced with decodeURI
-  //return unescape(dc.substring(begin + prefix.length, end));
-  return decodeURI(dc.substring(begin + prefix.length, end));
-};
-
-/* Create an alert to show if the browser is IE or not */
-if (isIE() && !checkIeCookie('ie_cookie')) {
-  var container = document.createElement('div');
-  container.classList.add('ie-notification');
-  container.innerHTML = "\n      <p>Your web browser (Internet Explorer) is out of date. Please update your browser for more security, speed, and for the best experience on this site.</p>\n      <div>\n      <div>\n        <a href=\"https://browsehappy.com/\" target=\"_blank\">Update my browser</a>\n        <button class=\"ignore-update\">Ignore</button>\n      </div>\n    ";
-  document.body.appendChild(container);
-  var ignoreUpdate = document.querySelector('.ignore-update');
-  ignoreUpdate.addEventListener('click', function (e) {
-    var d = new Date();
-    d.setTime(d.getTime() + 1 * 60 * 60 * 1000);
-    var expires = "expires=" + d.toUTCString();
-    document.cookie = "ie_cookie" + "=" + 1 + ";" + expires + ";path=/";
-    container.style.display = 'none';
-  });
-}
 
 ////////////////////
 // Keyboard focus

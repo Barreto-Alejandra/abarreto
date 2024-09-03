@@ -121,11 +121,10 @@
         letter-spacing: 1.5px;
         text-decoration: none;
         display: block;
-        transition: text-shadow 0.3s ease-in-out;
-        text-shadow: 0 0 5px transparent;
+        transition: 0.3s ease-in-out;
         &:hover,
         &:focus {
-          
+          opacity: 0.6;
         }
       }
     }

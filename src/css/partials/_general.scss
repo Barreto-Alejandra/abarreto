@@ -5,12 +5,10 @@ main {
         color: white;  
     }
     a.hover-anim {
-        transition: text-shadow 0.3s ease-in-out;
-        text-shadow: 0 0 5px transparent;
+        transition: 0.3s ease;
         &:hover,
         &:focus {
-            text-shadow: 0 0 8px $lime-green;
-            text-decoration-color: $lime-green;
+            color: black;
         }
     }
 }

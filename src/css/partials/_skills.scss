@@ -10,16 +10,43 @@
         color: black;
     }
     @include breakpoint(lg) {
-        padding: 100px 0px 150px;
+        padding: 100px 0px 130px;
         .text {
             width: 80%;
             margin: 0 auto;
         }
     }
     @include breakpoint(xl) {
-        padding: 120px 0px 150px;
+        padding: 120px 0px 130px;
 
     }
 }
+  
 
+.skill__slider {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 20px 0;
+    position: relative;
+    width: 80%;
+    margin: 30px auto 0px;
+    max-width: 500px;
+}
 
+.skill__slider--items {
+    display: inline-block;
+    animation: slide 20s linear infinite;
+}
+
+.skill__slider--items i {
+    margin: 0 30px;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
