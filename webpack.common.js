@@ -75,16 +75,6 @@ module.exports = {
       filename: "bundle.css",
       chunkFilename: "[id][hash].css",
     }),
-    new BrowserSyncPlugin(
-      {
-        // browse to http://localhost:3000/ during development,
-        // ./public directory is being served
-        proxy: "http://template.local/",
-        files: ["dist" + "/*.css", "dist" + "/*.js"],
-        injectCss: true,
-      },
-      { reload: false }
-    ),
     new ImageMinimizerPlugin({
       minimizer: {
         implementation: ImageMinimizerPlugin.imageminMinify,

@@ -8,8 +8,12 @@
 }
 
 .projects{
+    background-color: $tertiary-color;
     padding: 60px 0px;
     text-align: center;
+    h2 {
+        color: black;
+    }
     &__grid {
         margin-top: 40px;
         display: grid;
@@ -17,8 +21,9 @@
         column-gap: 30px;
         row-gap: 50px;
         &--item {
+            color: black;
             text-align: left;
-            border: 1px solid white;
+            border: 1px solid black;
             padding: 20px;
             transform: scale(1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -27,13 +32,14 @@
                 transform: scale(1.05);
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 
-                background: linear-gradient(233deg, #FF48C4, #2211EE, #33FF00, #B620E0, #FFE400);
-                
-                background-size: cover;
-                background-blend-mode: hard-light;
-                animation: hue-rotate 3s linear infinite
+                background: linear-gradient(233deg, $secondary-color, $tertiary-color, lighten($secondary-color, 15%), lighten($tertiary-color, 15%));
+    
+                    background-size: cover;
+                    background-blend-mode: hard-light;
+                    animation: hue-rotate 3s linear infinite;
             }
             a {
+                color: black;
                 text-decoration: none;
             }
             img {
@@ -45,6 +51,7 @@
                 margin: 15px 0px;
             }
             .text {
+                color: black;
                 line-height: 1.3;
                 font-family: $font-secondary;
             }
@@ -66,6 +73,9 @@
             margin-top: 60px;
             grid-template-columns: repeat(4, 1fr);
         }
+    }
+    @include breakpoint(xl) {
+        padding: 120px 0 130px;
     }
 }
 

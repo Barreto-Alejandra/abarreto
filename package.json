@@ -46,6 +46,8 @@
   "dependencies": {
     "@studio-freight/lenis": "^1.0.42",
     "core-js": "^3.33.3",
-    "regenerator-runtime": "^0.14.0"
+    "dat.gui": "^0.7.9",
+    "regenerator-runtime": "^0.14.0",
+    "three": "^0.168.0"
   }
 }

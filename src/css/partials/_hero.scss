@@ -1,112 +1,59 @@
-/* SCSS para la sección hero */
+@keyframes bounce {
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
 .hero {
-  position: relative;
-  height: 100vh;
+  height: 95vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background-color: black;
-  overflow: hidden;
-  color: white;
-
-  h1 {
-    font-size: 5rem;
+  justify-content: center;
+  position: relative;
+  &__container {
     text-align: center;
-    animation: scaleUp 1.5s ease-in-out forwards;
-    transform: scale(0);
-    opacity: 0;
-
     span {
-      display: inline-block;
-      background-image: linear-gradient(45deg, $secondary-color, $tertiary-color);
-      background-clip: text;
-      color: transparent;
-      animation: glowText 2s infinite ease-in-out;
-      position: relative;
+      font-family: $font-secondary;
+      font-size: clamp(30px, 2.5vw, 50px);
+    }
+    h1 {
+      font-size: clamp(45px, 4vw, 75px);
+      letter-spacing: 2px;
+      margin: 10px 0px;
+    }
+    h2 {
+      font-family: $font-secondary;
+      font-size: clamp(18px, 1.8vw, 35px);
+      font-weight: 400;
+      margin: 0px;
     }
   }
-
-  /* Elementos geométricos flotantes */
-  .floating-element {
+  &__arrowContainer {
     position: absolute;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.2);
-    animation: float 10s infinite ease-in-out;
-    mix-blend-mode: soft-light;
-  }
-
-  .floating-rectangle {
-    position: absolute;
-    width: 60px;
+    bottom: 50px;
+    width: 25px;
+    animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    cursor: pointer;
     height: 20px;
-    background-color: rgba(255, 255, 255, 0.2);
-    animation: float 8s infinite ease-in-out;
-    mix-blend-mode: soft-light;
-  }
-
-  /* Colocación de los elementos flotantes */
-  .element-1 {
-    top: 10%;
-    left: 5%;
-    width: 100px;
-    height: 100px;
-  }
-  .element-2 {
-    top: 80%;
-    left: 85%;
-    width: 60px;
-    height: 60px;
-  }
-  .element-3 {
-    top: 40%;
-    left: 50%;
-    width: 120px;
-    height: 120px;
-  }
-
-  .rectangle-1 {
-    bottom: 30%;
-    right: 20%;
-  }
-
-  .rectangle-2 {
-    top: 15%;
-    right: 15%;
-  }
-}
-
-/* Animaciones */
-@keyframes scaleUp {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes glowText {
-  0% {
-    filter: brightness(1);
-  }
-  50% {
-    filter: brightness(1.5);
-  }
-  100% {
-    filter: brightness(1);
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0);
+    &--item {
+      height: 3px;
+      background: $secondary-color;
+      transform: rotate(45deg);
+      transform-origin: 0% 0%;
+      border-radius: 3px;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        left: 100%;
+        border-radius: 3px;
+        background: $secondary-color;
+        transform: rotate(-90deg);
+        transform-origin: 0% 100%;
+      }
+    }
   }
 }

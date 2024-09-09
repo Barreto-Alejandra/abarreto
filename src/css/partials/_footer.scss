@@ -1,11 +1,11 @@
 .footer {
     border-top: 1px solid black;
     padding: 50px 0px;
-    background-color: $secondary-color;
+    background-color: $primary-color;
     text-align: center;
     .text {
         font-family: "Press Start 2P", system-ui;
-        color: black;
+        color: white;
         text-align: center;
     }
     .text:last-of-type {
@@ -19,7 +19,7 @@
         margin-top: 15px;
     }
     svg path {
-        color: black;
+        color: white;
     }
     @include breakpoint(lg) {
         padding-top: 80px;

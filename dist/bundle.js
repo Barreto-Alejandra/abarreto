@@ -128,6 +128,8 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 //////////////////////////
 
 
+
+
 var Navigation = /*#__PURE__*/function () {
   function Navigation() {
     _classCallCheck(this, Navigation);
@@ -160,35 +162,6 @@ var Navigation = /*#__PURE__*/function () {
   }]);
   return Navigation;
 }();
-var HeroAnimation = /*#__PURE__*/function () {
-  function HeroAnimation(heroSelector) {
-    _classCallCheck(this, HeroAnimation);
-    this.heroSection = document.querySelector(heroSelector);
-    this.img = this.heroSection.querySelector('.hero__img');
-    this.heading = this.heroSection.querySelector('h1');
-    this.text = this.heroSection.querySelector('.text');
-    this.animateHero(); // Llama directamente a la animación en el constructor
-  }
-  _createClass(HeroAnimation, [{
-    key: "animateHero",
-    value: function animateHero() {
-      var _this2 = this;
-      // Añade la clase 'visible' para activar la animación del background y la opacidad general
-      this.heroSection.classList.add('visible');
-
-      // Usa setTimeout para retrasar la animación de la imagen, el título y el texto
-      setTimeout(function () {
-        _this2.img.style.opacity = 1;
-        _this2.img.style.transform = 'translateY(0)';
-        _this2.heading.style.opacity = 1;
-        _this2.heading.style.transform = 'translateY(0)';
-        _this2.text.style.opacity = 1;
-        _this2.text.style.transform = 'translateY(0)';
-      }, 500); // Ajusta el tiempo según prefieras
-    }
-  }]);
-  return HeroAnimation;
-}();
 var FadeInOnScroll = /*#__PURE__*/function () {
   function FadeInOnScroll(elementsSelector) {
     var threshold = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0.8;
@@ -204,10 +177,10 @@ var FadeInOnScroll = /*#__PURE__*/function () {
   _createClass(FadeInOnScroll, [{
     key: "initScroll",
     value: function initScroll() {
-      var _this3 = this;
+      var _this2 = this;
       var raf = function raf(time) {
-        _this3.lenis.raf(time);
-        _this3.updateVisibility();
+        _this2.lenis.raf(time);
+        _this2.updateVisibility();
         requestAnimationFrame(raf);
       };
       requestAnimationFrame(raf);
@@ -215,9 +188,9 @@ var FadeInOnScroll = /*#__PURE__*/function () {
   }, {
     key: "updateVisibility",
     value: function updateVisibility() {
-      var _this4 = this;
+      var _this3 = this;
       this.elements.forEach(function (el) {
-        if (el.getBoundingClientRect().top < window.innerHeight * _this4.threshold) {
+        if (el.getBoundingClientRect().top < window.innerHeight * _this3.threshold) {
           el.classList.add('fadeInVisible');
         }
       });
@@ -236,12 +209,12 @@ var GridAnimation = /*#__PURE__*/function () {
   _createClass(GridAnimation, [{
     key: "initObserver",
     value: function initObserver() {
-      var _this5 = this;
+      var _this4 = this;
       this.observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry, index) {
           if (entry.isIntersecting) {
             setTimeout(function () {
-              _this5.animateItem(entry.target);
+              _this4.animateItem(entry.target);
             }, index * 180);
           }
         });
@@ -256,9 +229,9 @@ var GridAnimation = /*#__PURE__*/function () {
   }, {
     key: "observeItems",
     value: function observeItems() {
-      var _this6 = this;
+      var _this5 = this;
       this.gridItems.forEach(function (item) {
-        _this6.observer.observe(item);
+        _this5.observer.observe(item);
       });
     }
   }]);
@@ -289,8 +262,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
   new Navigation();
-  // new HeroAnimation('.hero');
-
   var fadeInElements = new FadeInOnScroll('.fadeIn');
   var gridAnimation = new GridAnimation('.projects__grid--item', {
     threshold: 0.4
