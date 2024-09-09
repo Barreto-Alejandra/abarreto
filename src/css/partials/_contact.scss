@@ -8,6 +8,35 @@
         font-family: $font-tertiary;
         font-size: clamp(12px, 1.5vw, 14px);
         letter-spacing: 0.5px;
+        text-decoration: none;
+        line-height: 1;
+        position: relative;
+        z-index: 0;
+        display: inline-block;
+        padding: 5px 5px;
+        overflow: hidden;
+        vertical-align: bottom;
+        transition: color .3s ease-out;
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            transform: translateY(calc(100% - 2px));
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(60deg, $tertiary-color 0%, $tertiary-color 100%);
+            transition: transform .25s ease-out;
+        }
+        &:hover,
+        &:focus {
+           color: black; 
+           &:before {
+            transform: translateY(0);
+            transition: transform .25s ease-out;
+           }
+        }
     }
     @include breakpoint(lg){
         padding: 100px 0px;

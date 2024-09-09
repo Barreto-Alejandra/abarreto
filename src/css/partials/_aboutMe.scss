@@ -1,0 +1,27 @@
+.aboutMe {
+  background-color: $tertiary-color;
+  border-bottom: 1px solid $secondary-color;
+  padding: 60px 0px;
+  h2 {
+    margin-bottom: 40px;
+  }
+  h2,
+  p {
+    color: $black;
+    text-align: center;
+  }
+  p {
+    margin: 0px;
+  }
+
+  @include breakpoint(lg) {
+    padding: 100px 0px 130px;
+    .text {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+  @include breakpoint(xl) {
+    padding: 120px 0px 130px;
+  }
+}

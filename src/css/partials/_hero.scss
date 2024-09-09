@@ -1,79 +1,112 @@
+/* SCSS para la sección hero */
 .hero {
-    padding: 120px 0px 60px;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  overflow: hidden;
+  color: white;
+
+  h1 {
+    font-size: 5rem;
     text-align: center;
+    animation: scaleUp 1.5s ease-in-out forwards;
+    transform: scale(0);
     opacity: 0;
-    transition: background-color 1s ease-in-out, opacity 1s ease-in-out;
-    
-    &.visible {
-      background-color: $primary-color;
-      opacity: 1;
+
+    span {
+      display: inline-block;
+      background-image: linear-gradient(45deg, $secondary-color, $tertiary-color);
+      background-clip: text;
+      color: transparent;
+      animation: glowText 2s infinite ease-in-out;
+      position: relative;
     }
-  
-    h1 {
-      letter-spacing: 2.5px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-    }
-  
-    &__img {
-      height: 30vh;
-      min-height: 250px;
-      margin-bottom: 20px;
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out 0.2s;
-  
-      img {
-        border-radius: 25px;
-        height: 100%;
-        min-height: 250px;
-        object-fit: cover;
-        object-position: center;
-      }
-    }
-  
-    .text {
-      opacity: 0;
-      transform: translateY(20px); 
-      transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out 0.4s;
-    }
-  
-    @include breakpoint(lg) {
-      padding: 180px 0px;
-      text-align: left;
-  
-      .container {
-        display: grid;
-        grid-template-columns: 0.7fr 1fr;
-        align-items: center;
-        column-gap: 80px;
-      }
-  
-      &__img {
-        height: 50vh;
-        min-height: 450px;
-  
-        img {
-          height: 50vh;
-          min-height: 450px;
-        }
-      }
-      .text {
-        margin: 0 auto 0px 0px;
-      }
-    }
-  
-    @include breakpoint(xl) {
-      padding-top: 220px;
-  
-      .container {
-        grid-template-columns: 0.85fr 1fr;
-      }
-  
-      .text {
-        width: 70%;
-      }
-    }
+  }
+
+  /* Elementos geométricos flotantes */
+  .floating-element {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    animation: float 10s infinite ease-in-out;
+    mix-blend-mode: soft-light;
+  }
+
+  .floating-rectangle {
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    animation: float 8s infinite ease-in-out;
+    mix-blend-mode: soft-light;
+  }
+
+  /* Colocación de los elementos flotantes */
+  .element-1 {
+    top: 10%;
+    left: 5%;
+    width: 100px;
+    height: 100px;
+  }
+  .element-2 {
+    top: 80%;
+    left: 85%;
+    width: 60px;
+    height: 60px;
+  }
+  .element-3 {
+    top: 40%;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+  }
+
+  .rectangle-1 {
+    bottom: 30%;
+    right: 20%;
+  }
+
+  .rectangle-2 {
+    top: 15%;
+    right: 15%;
+  }
 }
-  
+
+/* Animaciones */
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes glowText {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.5);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

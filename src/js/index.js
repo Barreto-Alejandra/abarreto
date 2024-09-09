@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   new Navigation();
-  new HeroAnimation('.hero');
+  // new HeroAnimation('.hero');
   
   const fadeInElements = new FadeInOnScroll('.fadeIn');
   const gridAnimation = new GridAnimation('.projects__grid--item', { threshold: 0.4 });

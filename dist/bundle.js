@@ -289,7 +289,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
   new Navigation();
-  new HeroAnimation('.hero');
+  // new HeroAnimation('.hero');
+
   var fadeInElements = new FadeInOnScroll('.fadeIn');
   var gridAnimation = new GridAnimation('.projects__grid--item', {
     threshold: 0.4
