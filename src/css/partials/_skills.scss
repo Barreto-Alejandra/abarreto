@@ -4,7 +4,7 @@
     background-color: $secondary-color;
     color: black;
     h2 {
-        margin-bottom: 40px;
+        margin-bottom: clamp(30px, 1.5vw, 40px);
     }
     .text {
         color: black;
