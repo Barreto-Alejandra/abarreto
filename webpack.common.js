@@ -7,8 +7,7 @@ module.exports = {
   entry: ["./src/js/index.js"],
   output: {
     path: path.resolve(__dirname, "dist"),
-    // publicPath: "/wp-content/themes/frontend/dist/",
-    filename: "bundle.js",
+    publicPath: "/abarreto/dist/",  // Ajusta para el despliegue correcto en GitHub Pages
     filename: "bundle.js",
     chunkFilename: "[id][hash].js",
   },
