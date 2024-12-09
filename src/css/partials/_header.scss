@@ -1,8 +1,9 @@
 .header {
   position: fixed;
   top: 0;
+  right: 0px;
   left: 0;
-  width: 100%;
+  // width: 100%;
   z-index: 99;
   padding: 2rem;
   background-color: $secondary-color;
