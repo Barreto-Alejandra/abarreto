@@ -1,4 +1,3 @@
-
 main {
     color: white;
     a {
@@ -33,13 +32,11 @@ html.lenis, html.lenis body {
     pointer-events: none;
 }
 
-/* Establece la opacidad inicial a 0 para que los elementos estén ocultos inicialmente */
 .fadeIn {
     opacity: 0;
     transition: opacity 1s ease-out;
 }
-  
-  /* Clase para cuando los elementos están en el viewport y deben volverse visibles */
+
 .fadeInVisible {
     opacity: 1 !important;
 }
